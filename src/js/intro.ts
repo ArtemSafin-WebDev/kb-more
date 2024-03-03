@@ -7,7 +7,6 @@ export default function intro() {
   const container = document.getElementById("myPanzoom");
   const rows = document.querySelector<HTMLElement>(".home__rows");
   if (!rows) return;
-  const col = document.querySelector<HTMLElement>(".home__col");
   const options: Partial<OptionsType> = {
     click: "toggleZoom",
     minScale: 1,
