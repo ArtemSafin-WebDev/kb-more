@@ -1,0 +1,11 @@
+:root {
+  --text-color: #fff4e0;
+  --bg: #161515;
+  --inter: "Inter", sans-serif;
+  --content-padding: 2rem;
+  --container-width: 162rem;
+
+  @include breakpoint(mobile) {
+    --content-padding: 2rem;
+  }
+}
