@@ -1,6 +1,5 @@
 import { Panzoom } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/panzoom/panzoom.css";
-
 import { OptionsType } from "@fancyapps/ui/types/Panzoom/options";
 
 export default function intro() {
@@ -30,7 +29,6 @@ export default function intro() {
 
   instance.panTo({
     x: horizontalCenter,
-
     friction: 0,
   });
 
