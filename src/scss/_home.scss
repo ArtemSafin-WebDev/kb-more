@@ -29,14 +29,71 @@
   gap: 8rem;
   padding: 8rem;
   width: max-content;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 8rem,
+    black 40rem,
+    black calc(100% - 40rem),
+    transparent calc(100% - 8rem)
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 8rem,
+    black 40rem,
+    black calc(100% - 40rem),
+    transparent calc(100% - 8rem)
+  );
 }
 
 .home__col {
   flex-shrink: 0;
+  width: 23.5rem;
+  overflow: hidden;
+}
+
+.home__col-track {
+  position: relative;
+}
+
+.home__col-inner-track {
   display: flex;
   flex-direction: column;
   gap: 8rem;
-  width: 23.5rem;
+  padding-top: 8rem;
+  .home__col:nth-child(odd) & {
+    &:nth-child(2) {
+      position: absolute;
+
+      left: 0;
+      width: 100%;
+      top: 100%;
+      // margin-top: 8rem;
+    }
+    &:nth-child(3) {
+      position: absolute;
+      top: 200%;
+      left: 0;
+      width: 100%;
+      // margin-top: 16rem;
+    }
+  }
+  .home__col:nth-child(even) & {
+    &:nth-child(2) {
+      position: absolute;
+
+      left: 0;
+      width: 100%;
+      bottom: 100%;
+      // margin-bottom: 8rem;
+    }
+    &:nth-child(3) {
+      position: absolute;
+      bottom: 200%;
+      left: 0;
+      width: 100%;
+      // margin-bottom: 16rem;
+    }
+  }
 }
 
 .home__card {
