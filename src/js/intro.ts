@@ -79,4 +79,19 @@ export default function intro() {
   setTimeout(() => {
     // instance.zoomIn(2);
   }, 2000);
+
+  let timer: any = null;
+
+  instance.on("touchStart", () => {
+    timer = setTimeout(() => {
+      document.body.classList.add("panning");
+    }, 200);
+  });
+  instance.on("touchEnd", () => {
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
+    document.body.classList.remove("panning");
+  });
 }
