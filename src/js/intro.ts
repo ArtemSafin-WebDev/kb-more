@@ -13,7 +13,7 @@ export default function intro() {
     click: "toggleZoom",
     minScale: 1,
     maxScale: 4,
-    // wheel: false,
+    wheel: false,
 
     width: () => {
       return rows.offsetWidth;
