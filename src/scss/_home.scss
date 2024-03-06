@@ -11,6 +11,10 @@
   position: relative;
   width: 100%;
   background-color: #161515 !important;
+
+  @include breakpoint(mobile) {
+    height: 100svh;
+  }
 }
 
 .home__pane {
