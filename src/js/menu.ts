@@ -1,10 +1,11 @@
 export default function menu() {
-  const burger = document.querySelector<HTMLButtonElement>(
-    ".page-header__burger"
-  );
-
-  burger?.addEventListener("click", (event) => {
-    event.preventDefault();
-    document.body.classList.toggle("menu-open");
+  document.addEventListener("click", (event) => {
+    const target = event.target as HTMLElement;
+    if (
+      target.matches(".page-header__burger") ||
+      target.closest(".page-header__burger")
+    ) {
+      document.body.classList.toggle("menu-open");
+    }
   });
 }

@@ -3,7 +3,7 @@ import "@fancyapps/ui/dist/panzoom/panzoom.css";
 import { OptionsType } from "@fancyapps/ui/types/Panzoom/options";
 import gsap from "gsap";
 
-export default function intro() {
+export default function home() {
   const container = document.getElementById("myPanzoom");
   const rows = document.querySelector<HTMLElement>(".home__rows");
   if (!rows) return;
@@ -12,8 +12,8 @@ export default function intro() {
   const options: Partial<OptionsType> = {
     click: "toggleZoom",
     minScale: 1,
-    maxScale: 4,
-    wheel: false,
+    maxScale: 2,
+    panOnlyZoomed: false,
 
     width: () => {
       return rows.offsetWidth;
