@@ -10,7 +10,7 @@ export default function home() {
 
   const DURATION = 180;
   const options: Partial<OptionsType> = {
-    click: "toggleZoom",
+    click: false,
     minScale: 1,
     maxScale: 2,
     panOnlyZoomed: false,
@@ -93,5 +93,11 @@ export default function home() {
       timer = null;
     }
     document.body.classList.remove("panning");
+  });
+
+  const btn = document.querySelector<HTMLElement>(".home__subjects-btn");
+  btn?.addEventListener("click", (event) => {
+    event.preventDefault();
+    document.querySelector(".home__subjects")?.classList.toggle("active");
   });
 }
