@@ -1,8 +1,9 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import initFileUpload from "./func/initFIleUpload";
+import { Flip } from "gsap/Flip";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, Flip);
 
 export default function project() {
   const project = document.querySelector<HTMLElement>(".project");
@@ -48,6 +49,35 @@ export default function project() {
         tl.to(innerBar, {
           scaleX: 1,
           duration: 1,
+        });
+      });
+    }
+
+    const intro = context.querySelector<HTMLElement>(".project__intro");
+
+    const introImageBlock = context.querySelector<HTMLElement>(
+      ".project__intro-image-wrapper-animation-wrapper"
+    );
+
+    const introImageTarget = context.querySelector<HTMLElement>(
+      ".project__intro-image-wrapper"
+    );
+
+    if (introImageBlock && introImageTarget) {
+      const state = Flip.getState(introImageBlock);
+      introImageTarget.appendChild(introImageBlock);
+      mm.add("(min-width: 641px)", () => {
+        Flip.to(state, {
+          absolute: true,
+          ease: "none",
+          duration: 4,
+          scrollTrigger: {
+            trigger: intro,
+            start: "top+=200 center",
+            end: "top+=50% center",
+            scrub: true,
+            markers: false,
+          },
         });
       });
     }

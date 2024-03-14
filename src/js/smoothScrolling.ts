@@ -84,7 +84,8 @@ export default function smoothScrolling() {
           duration: 0.4,
           ease: "none",
           scrollTo: {
-            y: getPosition(element),
+            // y: getPosition(element),
+            y: element,
             autoKill: false,
             offsetY: pageHeader ? pageHeader.offsetHeight : 0,
           },
