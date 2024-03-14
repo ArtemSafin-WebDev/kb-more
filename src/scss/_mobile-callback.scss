@@ -1,0 +1,25 @@
+.mobile-callback {
+  display: none;
+
+  @include breakpoint(mobile) {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 30;
+    padding: 1.7rem 4.4rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 120%;
+    text-transform: uppercase;
+    text-align: center;
+    text-transform: uppercase;
+    background: #fff4e0;
+    color: #343333;
+    display: block;
+    &:link,
+    &:visited {
+      color: #343333;
+    }
+  }
+}

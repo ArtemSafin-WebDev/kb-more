@@ -14,7 +14,7 @@ html {
   font-size: clamp(2px, 0.6vw, 125px);
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
-  scroll-padding-top: 10rem;
+  scroll-padding-top: 20rem;
 
   // font-size: 10px;
   @include breakpoint(mobile) {
@@ -227,4 +227,20 @@ select:-webkit-autofill:focus {
   flex-direction: column;
   overflow-x: hidden;
   overflow-x: clip;
+}
+
+.project-wrapper {
+  position: relative;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }

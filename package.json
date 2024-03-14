@@ -24,6 +24,7 @@
   "dependencies": {
     "@fancyapps/ui": "^5.0.33",
     "@studio-freight/lenis": "^1.0.39",
+    "axios": "^1.6.7",
     "gsap": "^3.12.2",
     "inputmask": "^5.0.8",
     "swiper": "^10.2.0",
