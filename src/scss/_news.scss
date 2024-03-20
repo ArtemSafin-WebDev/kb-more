@@ -1,0 +1,360 @@
+.news {
+  @include blockWrapper;
+  padding-top: 13.8rem;
+  padding-bottom: 23rem;
+
+  @include breakpoint(mobile) {
+    padding-top: 9rem;
+    padding-bottom: 22.5rem;
+  }
+}
+
+.news__content {
+  @include blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.news__heading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14rem;
+  line-height: 100%;
+  letter-spacing: -0.8rem;
+  margin-bottom: 31rem;
+  font-family: var(--montserrat);
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 5.2rem;
+    line-height: 100%;
+    letter-spacing: -0.5rem;
+    margin-bottom: 25rem;
+  }
+}
+
+.news__nav {
+  margin-bottom: 8rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 3rem;
+  }
+}
+
+.news__nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  align-items: flex-start;
+
+  @include breakpoint(mobile) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0 calc(-1 * var(--content-padding));
+    padding: 0 var(--content-padding);
+    @include noScrollbar;
+    padding-bottom: 1rem;
+    overflow-y: hidden;
+  }
+}
+
+.news__nav-list-item {
+  flex-shrink: 0;
+}
+
+.news__nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-style: normal;
+  font-size: 1.3rem;
+  line-height: 1.56rem;
+  letter-spacing: -0.05rem;
+  color: rgba(#fff4e0, 0.7);
+  position: relative;
+  font-variation-settings: "wght" 400;
+  transition: font-variation-settings 0.2s ease, color 0.2s;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.56rem;
+    letter-spacing: -0.05rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  &::after {
+    content: "";
+    position: static;
+    margin: 0;
+    left: 100%;
+    top: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    opacity: 0;
+    width: 0.6rem;
+    height: 1.3rem;
+    background-image: url("../images/).svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &::before {
+    content: "";
+    position: static;
+    margin: 0;
+    right: 100%;
+    top: 0;
+
+    pointer-events: none;
+    transition: opacity 0.2s;
+    opacity: 0;
+    width: 0.6rem;
+    height: 1.3rem;
+    background-image: url("../images/(.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &:link,
+  &:visited {
+    color: rgba(#fff4e0, 0.7);
+  }
+
+  &.active {
+    font-variation-settings: "wght" 500;
+    color: rgba(#fff4e0, 1);
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.news__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 3rem;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 4.4rem;
+  }
+}
+
+.news__list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.news__card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border: 1px solid #343333;
+  padding: 7rem;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 5rem;
+
+  &--cover {
+    border: none;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 2rem;
+    padding-top: 4.7rem;
+    &--cover {
+      &::before {
+        content: "";
+        display: block;
+        min-height: 30rem;
+      }
+    }
+  }
+}
+
+.news__card-image-container {
+  position: relative;
+  margin: 0 -7rem;
+  margin-bottom: 5rem;
+
+  @include breakpointMF(small-tablet) {
+    &::before {
+      content: "";
+      display: block;
+      padding-bottom: 75%;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    display: contents;
+  }
+
+  .news__card--cover & {
+    position: static;
+  }
+}
+
+.news__card-image-inner-container {
+  @include breakpointMF(small-tablet) {
+    position: absolute;
+    width: 75%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 7rem * 2);
+  }
+
+  @include breakpoint(mobile) {
+    width: auto;
+    position: relative;
+
+    margin-bottom: 5rem;
+
+    .news__card--cover & {
+      position: static;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 68%;
+    @include breakpoint(mobile) {
+      padding-bottom: 81%;
+    }
+  }
+
+  .news__card--vertical & {
+    width: 52%;
+
+    @include breakpoint(mobile) {
+      width: 17.4rem;
+      align-self: center;
+    }
+    &::before {
+      content: "";
+      padding-bottom: 142%;
+    }
+  }
+
+  .news__card--cover & {
+    position: absolute;
+    z-index: -1;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(black, 0.2);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 37.6rem;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+      background: linear-gradient(
+        180deg,
+        rgba(27, 26, 26, 0) 0%,
+        rgba(27, 26, 26, 0.6) 63.22%
+      );
+    }
+  }
+}
+
+.news__card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news__card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.news__card-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 120%;
+  letter-spacing: -0.08rem;
+  font-family: var(--montserrat);
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 120%;
+    letter-spacing: -0.08rem;
+  }
+}
+
+.news__card-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 140%;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 140%;
+  }
+}
+
+.news__card-info {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 140%;
+  color: rgba(#fff4e0, 0.4);
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 140%;
+  }
+}
+
+.news__show-more {
+  align-self: center;
+  text-align: center;
+  padding: 4rem 7.1rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: -0.05rem;
+  background-color: #343333;
+  border-radius: 100rem;
+  color: #fff4e0;
+  margin-top: 12rem;
+
+  @include breakpoint(mobile) {
+    margin-top: 8rem;
+  }
+}

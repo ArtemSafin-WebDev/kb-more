@@ -5,6 +5,8 @@ import modals from "./modals";
 import menu from "./menu";
 import project from "./project";
 import smoothScrolling from "./smoothScrolling";
+import about from "./about";
+import contactsBlock from "./contactsBlock";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -12,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   modals();
   menu();
   project();
+  about();
+  contactsBlock();
 });
 
 window.addEventListener("load", () => {

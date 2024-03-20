@@ -16,7 +16,6 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 20rem;
 
-  // font-size: 10px;
   @include breakpoint(mobile) {
     font-size: 10px;
   }

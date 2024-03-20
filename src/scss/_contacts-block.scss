@@ -1,0 +1,237 @@
+.contacts-block {
+  @include blockWrapper;
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.contacts-block__content {
+  @include blockContent;
+  border-top: 1px solid #fff4e0;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 3rem;
+}
+
+.contacts-block__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-block__nav-heading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+  margin-bottom: 8rem;
+}
+
+.contacts-block__nav-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 3rem;
+}
+
+.contacts-block__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.contacts-block__nav-link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 120%;
+  letter-spacing: -0.15rem;
+}
+
+.contacts-block__nav-submenu-list {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.contacts-block__nav-submenu-link {
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+}
+
+.contacts-block__callback {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-block__callback-form-heading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+  margin-bottom: 8rem;
+}
+
+.contacts-block__callback-form-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 3rem;
+  grid-row-gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.contacts-block__callback-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-block__callback-form-label {
+  display: block;
+  position: relative;
+}
+
+.contacts-block__callback-form-input {
+  display: block;
+  height: 6rem;
+  padding: 0 2rem;
+  border: 1px solid #fff4e0;
+  border-radius: 4rem;
+  font-size: 1.6rem;
+  color: #fff4e0;
+
+  @include breakpoint(mobile) {
+    height: 5rem;
+  }
+}
+
+.contacts-block__callback-form-label-text {
+  position: absolute;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3rem;
+  font-family: var(--geologica);
+  line-height: 120%;
+  letter-spacing: -0.025em;
+  background-color: #1b1a1a;
+  color: #fff4e0;
+  padding: 0.5rem;
+  top: -1.35rem;
+  left: 1.5rem;
+  user-select: none;
+  pointer-events: none;
+}
+
+.contacts-block__callback-form-file {
+  display: block;
+  position: relative;
+}
+
+.contacts-block__callback-form-file-label-text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3rem;
+  font-family: var(--geologica);
+  line-height: 120%;
+  letter-spacing: -0.025em;
+  background-color: #1b1a1a;
+  color: #fff4e0;
+  padding: 0.5rem;
+  top: -1.35rem;
+  left: 1.5rem;
+  position: absolute;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+
+.contacts-block__callback-form-file-input {
+  display: none;
+}
+
+.contacts-block__callback-form-file-wrapper {
+  display: block;
+  height: 6rem;
+  padding: 0 2rem;
+  border: 1px solid #fff4e0;
+  border-radius: 4rem;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @include breakpoint(mobile) {
+    height: 5rem;
+  }
+
+  svg {
+    flex-shrink: 0;
+    width: 1.6rem;
+    height: 2rem;
+    fill: #fff4e0;
+  }
+}
+
+.contacts-block__callback-form-file-text {
+  width: 30%;
+  flex-grow: 1;
+}
+
+.contacts-block__callback-form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3.6rem;
+}
+
+.contacts-block__callback-form-policy {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 120%;
+  text-align: right;
+  letter-spacing: -0.025em;
+  font-family: var(--geologica);
+  max-width: 24rem;
+}
+
+.contacts-block__callback-form-submit {
+  display: block;
+  text-align: center;
+  padding: 4rem 8.2rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: -0.05rem;
+  color: #343333;
+  background-color: #fff4e0;
+  border-radius: 6rem;
+  user-select: none;
+  flex-shrink: 0;
+  white-space: nowrap;
+  &:link,
+  &:visited {
+    color: #343333;
+  }
+
+  @include breakpoint(mobile) {
+    align-self: stretch;
+    width: 100%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: -0.05rem;
+    padding: 4rem;
+  }
+}

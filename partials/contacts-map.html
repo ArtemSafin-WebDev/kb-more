@@ -1,0 +1,120 @@
+<script src="https://api-maps.yandex.ru/v3/?apikey=da6613fb-ef1d-448a-b516-76e30f5e730e&lang=ru_RU"></script>
+
+<script>
+    initMap();
+
+    async function initMap() {
+
+
+        await ymaps3.ready;
+        const {
+            YMap,
+            YMapDefaultSchemeLayer,
+            YMapControls,
+            YMapMarker,
+            YMapDefaultFeaturesLayer
+        } = ymaps3;
+
+        const { YMapZoomControl } = await ymaps3.import('@yandex/ymaps3-controls@0.0.1');
+
+        let theme = null;
+        let data = null;
+        const mapElement = document.querySelector('#contacts-map');
+        if (!mapElement) return;
+        const themeUrl = mapElement.parentElement.getAttribute('data-theme');
+        const dataUrl = mapElement.parentElement.getAttribute('data-points');
+        const pinUrl = mapElement.parentElement.getAttribute('data-pin');
+
+        if (themeUrl) {
+            try {
+                const response = await fetch(themeUrl);
+                theme = await response.json();
+            } catch (err) {
+                console.error('Error during loading theme')
+            }
+        }
+
+        if (dataUrl) {
+            try {
+                const response = await fetch(dataUrl);
+                data = await response.json();
+            } catch (err) {
+                console.error('Error during loading points')
+            }
+        }
+
+        const lat = Number(mapElement.parentElement.getAttribute('data-lat'));
+        const lng = Number(mapElement.parentElement.getAttribute('data-lng'));
+
+        const map = new YMap(
+            mapElement,
+            {
+                location: {
+                    center: [lng, lat],
+                    zoom: 4
+                },
+                behaviors: ['drag', 'pinchZoom'],
+
+            }
+        );
+
+        let markers = []
+
+        const createMarker = (lat, lng) => {
+            const markerElement = document.createElement('div');
+            const pin = document.createElement('img')
+            pin.className = 'about__map-marker-pin';
+            pin.src = pinUrl
+            markerElement.className = 'about__map-marker';
+            markerElement.appendChild(pin)
+            const marker = new YMapMarker(
+                {
+
+                    coordinates: [lng, lat],
+                    draggable: false,
+                    mapFollowsOnDrag: false
+                },
+                markerElement
+            );
+            return marker;
+        }
+
+        map.addChild(new YMapDefaultSchemeLayer({
+            theme: "dark",
+            customization: theme
+        }))
+            .addChild(new YMapDefaultFeaturesLayer({ zIndex: 1800 }))
+
+
+        const addPoints = () => {
+            data.forEach(item => {
+                console.log('Data item', item)
+                const cityPoints = item.points;
+                cityPoints.forEach(point => {
+                    const marker = createMarker(point.coords.lat, point.coords.lng)
+                    map.addChild(marker)
+                    markers.push(marker)
+                })
+            })
+        }
+
+        function changeMapPosition(location, duration = 0) {
+            map.update({ location: { ...location, duration } });
+        }
+
+        addPoints();
+
+
+
+        const controls = new YMapControls({
+            position: 'top right', orientation: 'vertical'
+        });
+        controls.addChild(
+            new YMapZoomControl({
+                easing: 'linear',
+
+            })
+        );
+        map.addChild(controls);
+    }
+</script>

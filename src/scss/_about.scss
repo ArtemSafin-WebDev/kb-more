@@ -1,0 +1,1081 @@
+.about {
+  @include blockWrapper;
+  padding-top: 13.8rem;
+
+  @include breakpoint(mobile) {
+    padding-top: 9rem;
+  }
+}
+
+.about__content {
+  @include blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.about__heading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14rem;
+  line-height: 100%;
+  letter-spacing: -0.8rem;
+  margin-bottom: 27.4rem;
+  font-family: var(--montserrat);
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 5.2rem;
+    line-height: 100%;
+    letter-spacing: -0.5rem;
+    margin-bottom: 6rem;
+    br {
+      display: none;
+    }
+  }
+}
+
+.about__intro {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+  padding-bottom: 6rem;
+  margin-bottom: 6rem;
+  border-bottom: 1px solid rgba(#fff4e0, 0.3);
+
+  @include breakpoint(mobile) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 2rem;
+    grid-row-gap: 4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.about__nav {
+  grid-column: 1 / 4;
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.about__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.about__nav-link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 120%;
+  color: rgba(#fff4e0, 0.3);
+  display: block;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    border-bottom: 1px dashed #fff4e0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &:link,
+  &:visited {
+    color: rgba(#fff4e0, 0.3);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: rgba(#fff4e0, 1);
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.about__intro-text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3rem;
+  letter-spacing: -0.025em;
+  line-height: 120%;
+  font-family: var(--geologica);
+  grid-column: 4 / 6;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.3rem;
+    line-height: 120%;
+    grid-column: 2 / -1;
+  }
+}
+
+.about__intro-image-wrapper {
+  grid-column: 7 / -1;
+  position: relative;
+
+  @include breakpoint(mobile) {
+    grid-column: 1 / -1;
+  }
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 60%;
+  }
+}
+
+.about__intro-image-new-container {
+  position: relative;
+  grid-column: 1 / -1;
+  margin-top: 5rem;
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 60%;
+  }
+}
+
+.about__intro-image-wrapper-animation-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.about__intro-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__info {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+  margin-bottom: 28rem;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8rem;
+    gap: 0;
+  }
+}
+
+.about__numbers-list {
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 3rem;
+  grid-row-gap: 5rem;
+
+  @include breakpoint(mobile) {
+    grid-gap: 2rem;
+    grid-row-gap: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.about__numbers-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__numbers-card-key {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 8rem;
+  line-height: 120%;
+  letter-spacing: -0.095em;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 5rem;
+    line-height: 120%;
+    letter-spacing: -0.095em;
+  }
+}
+
+.about__numbers-card-value {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.025em;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.3rem;
+    line-height: 120%;
+    letter-spacing: -0.025em;
+  }
+}
+
+.about__info-large-text {
+  grid-column: 7 / 10;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 120%;
+  letter-spacing: -0.15rem;
+  font-family: var(--montserrat);
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.6rem;
+    letter-spacing: -0.15rem;
+    line-height: 120%;
+    margin-bottom: 3rem;
+  }
+}
+
+.about__info-small-text {
+  grid-column: 10 / -1;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 140%;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 140%;
+  }
+}
+
+.about__team {
+  margin-bottom: 22rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 8rem;
+  }
+}
+
+.about__team-top-row {
+  @include breakpointMF(small-tablet) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: 3rem;
+    display: grid;
+    margin-bottom: 10.6rem;
+    .about__team-card {
+      grid-column: 7 / 10;
+      margin-top: 16rem;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 7.7rem;
+    margin-bottom: 8rem;
+  }
+}
+
+.about__team-text-content {
+  grid-column: 1 / 7;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include breakpoint(mobile) {
+    gap: 2rem;
+  }
+}
+
+.about__team-small-heading {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.025em;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: -0.05rem;
+    line-height: 140%;
+  }
+}
+
+.about__team-quote {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 120%;
+  letter-spacing: -0.15rem;
+  font-family: var(--montserrat);
+
+  @include breakpoint(mobile) {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.6rem;
+    line-height: 120%;
+    letter-spacing: -0.15rem;
+  }
+}
+
+.about__team-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__team-card-image-container {
+  position: relative;
+  margin-bottom: 1.7rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 1rem;
+  }
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 135%;
+  }
+}
+
+.about__team-card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__team-card-role {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.025em;
+  color: rgba(#fff4e0, 0.3);
+  margin-bottom: 0.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(mobile) {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.3rem;
+    line-height: 120%;
+    letter-spacing: -0.025em;
+  }
+}
+
+.about__team-card-name {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.025em;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.3rem;
+    line-height: 120%;
+    letter-spacing: -0.025em;
+  }
+}
+
+.about__team-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-gap: 3rem;
+  grid-row-gap: 6rem;
+
+  @include breakpoint(mobile) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 2rem;
+  }
+}
+
+.about__team-list-item {
+  @include breakpointMF(small-tablet) {
+    &:nth-child(6n + 3) {
+      grid-column: 4 / -1;
+    }
+    &:nth-child(4n + 5) {
+      grid-column: 3 / 4;
+    }
+    &:nth-child(8n + 9) {
+      grid-column: 4 / 5;
+    }
+  }
+}
+
+.about__offer {
+  margin-bottom: 22rem;
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 8rem;
+  }
+}
+
+.about__offer-bg {
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(#1b1a1a, 0.7);
+  }
+}
+
+.about__offer-bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__offer-content {
+  @include breakpointMF(small-tablet) {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: 3rem;
+    padding-top: 3.8rem;
+    padding-bottom: 7rem;
+  }
+
+  @include breakpoint(mobile) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.about__offer-content-inner {
+  @include breakpointMF(small-tablet) {
+    grid-column: 4 / -1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 5rem;
+  }
+}
+
+.about__offer-top-row {
+  @include breakpointMF(small-tablet) {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    grid-gap: 3rem;
+    margin-bottom: 25rem;
+    align-items: center;
+  }
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 15rem;
+  }
+}
+
+.about__offer-small-heading {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+  grid-column: 1 / 4;
+
+  @include breakpoint(mobile) {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 120%;
+    letter-spacing: -0.05rem;
+  }
+}
+
+.about__offer-large-heading {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 120%;
+  letter-spacing: -0.15rem;
+  font-family: var(--geologica);
+  grid-column: 4 / -1;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 3rem;
+    line-height: 120%;
+  }
+}
+
+.about__offer-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__offer-list-item {
+  border-top: 1px solid rgba(#f5ead6, 0.3);
+  &::before {
+    display: none;
+  }
+}
+.about__offer-card {
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-gap: 3rem;
+
+  @include breakpoint(mobile) {
+    padding: 1rem 0;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 2rem;
+  }
+
+  &::before {
+    content: counter(ordered-list, decimal-leading-zero);
+    grid-column: 1 / 4;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 120%;
+    letter-spacing: -0.025em;
+
+    @include breakpoint(mobile) {
+      grid-column: 1 / 2;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 120%;
+      letter-spacing: -0.025em;
+    }
+  }
+}
+
+.about__offer-card-content {
+  grid-column: 4 / -1;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  @include breakpoint(mobile) {
+    grid-column: 2 / -1;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: stretch;
+  }
+}
+
+.about__offer-card-text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 120%;
+  letter-spacing: -0.15rem;
+
+  font-family: var(--geologica);
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.6rem;
+    letter-spacing: -0.08rem;
+    line-height: 120%;
+  }
+}
+
+.about__offer-card-remark {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 120%;
+  text-align: right;
+  letter-spacing: -0.05rem;
+  margin-left: auto;
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  @include breakpoint(mobile) {
+    margin: 0;
+    text-align: left;
+  }
+}
+
+.about__career {
+  margin-bottom: 24rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 8rem;
+  }
+}
+
+.about__career-top-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+  margin-bottom: 4rem;
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+    gap: 2rem;
+  }
+}
+
+.about__career-large-heading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5rem;
+  line-height: 100%;
+  letter-spacing: -0.35rem;
+  grid-column: 1 / 7;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.6rem;
+    line-height: 120%;
+    letter-spacing: -0.08rem;
+    font-family: var(--geologica);
+  }
+}
+
+.about__career-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+  grid-column: 7 / 10;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 120%;
+    letter-spacing: -0.05rem;
+  }
+}
+
+.about__career-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__career-list-item {
+  border-top: 1px solid rgba(#fff4e0, 0.3);
+}
+
+.about__career-card {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+  padding: 2rem 0;
+  align-items: center;
+  transition: color 0.2s, background-color 0.2s;
+  grid-template-areas: "title title title title title title city city salary salary more more";
+
+  @include breakpoint(mobile) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 2rem;
+    grid-template-areas: "city city more more" "title title title title" "salary salary salary salary";
+  }
+
+  @include breakpointMF(small-tablet) {
+    & > * {
+      transition: transform 0.2s;
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: #fff4e0;
+        color: #343333;
+        .about__career-card-title {
+          transform: translateX(2rem);
+        }
+
+        .about__career-card-city {
+          transform: translateX(2rem);
+        }
+        .about__career-card-salary {
+          transform: translateX(2rem);
+        }
+
+        .about__career-card-more {
+          transform: translateX(-2rem);
+        }
+      }
+    }
+  }
+}
+
+.about__career-card-title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 120%;
+  letter-spacing: -0.15rem;
+
+  grid-area: title;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.1rem;
+    line-height: 120%;
+    letter-spacing: -0.15rem;
+  }
+}
+
+.about__career-card-city {
+  grid-area: city;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 120%;
+    letter-spacing: -0.05rem;
+  }
+}
+
+.about__career-card-salary {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+  grid-area: salary;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 120%;
+    letter-spacing: -0.05rem;
+  }
+}
+
+.about__career-card-more {
+  display: flex;
+  align-items: center;
+  grid-area: more;
+  justify-self: flex-end;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 120%;
+  text-align: right;
+  letter-spacing: -0.05rem;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 120%;
+    letter-spacing: -0.05rem;
+  }
+}
+
+.about__geography {
+  margin-bottom: 24rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 8rem;
+  }
+}
+
+.about__map-marker {
+  width: 40px;
+  height: 40px;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.about__map-marker-pin {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.about__geography-heading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5rem;
+  line-height: 100%;
+  letter-spacing: -0.35rem;
+  margin-bottom: 4.6rem;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.6rem;
+    letter-spacing: -0.08rem;
+    margin-bottom: 4rem;
+    line-height: 120%;
+    font-family: var(--geologica);
+  }
+}
+
+.about__geography-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.about__geography-nav {
+  grid-column: 1 / 3;
+}
+
+.about__geography-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+
+  @include breakpoint(mobile) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0 calc(-1 * var(--content-padding));
+    padding: 0 var(--content-padding);
+    @include noScrollbar;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    overflow-y: hidden;
+  }
+}
+
+.about__geography-nav-list-item {
+  flex-shrink: 0;
+}
+
+.about__geography-nav-link {
+  display: block;
+  font-style: normal;
+
+  font-size: 1.3rem;
+  line-height: 1.56rem;
+  letter-spacing: -0.05rem;
+  color: rgba(#fff4e0, 0.7);
+  position: relative;
+  font-variation-settings: "wght" 400;
+  transition: font-variation-settings 0.2s ease, color 0.2s;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.56rem;
+    letter-spacing: -0.05rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 0.5rem;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    opacity: 0;
+    width: 0.6rem;
+    height: 1.3rem;
+    background-image: url("../images/).svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include breakpoint(mobile) {
+      position: static;
+      margin: 0;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 0;
+    margin-right: 0.5rem;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    opacity: 0;
+    width: 0.6rem;
+    height: 1.3rem;
+    background-image: url("../images/(.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include breakpoint(mobile) {
+      position: static;
+      margin: 0;
+    }
+  }
+
+  &:link,
+  &:visited {
+    color: rgba(#fff4e0, 0.7);
+  }
+
+  &.active {
+    font-variation-settings: "wght" 500;
+    color: rgba(#fff4e0, 1);
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.about__geography-map-wrapper {
+  position: relative;
+  grid-column: 3 / -1;
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 51%;
+
+    @include breakpoint(mobile) {
+      padding-bottom: 145%;
+    }
+  }
+}
+
+.about__geography-map-element {
+  background-color: grey;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.about__docs {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+  margin-bottom: 16rem;
+  @include breakpoint(mobile) {
+    margin-bottom: 7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.about__docs-heading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5rem;
+  line-height: 100%;
+  letter-spacing: -0.35rem;
+  grid-column: 1 / 7;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.6rem;
+    line-height: 120%;
+    letter-spacing: -0.08rem;
+    margin-bottom: 4rem;
+    font-family: var(--geologica);
+  }
+}
+
+.about__docs-list {
+  grid-column: 7 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 3rem;
+  grid-row-gap: 4rem;
+
+  @include breakpoint(mobile) {
+    grid-gap: 2rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.about__docs-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.about__docs-card-title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+  text-decoration-line: underline;
+  color: #fff4e0;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 120%;
+    letter-spacing: -0.05rem;
+  }
+}
+
+.about__docs-card-date {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+  color: rgba(#fff4e0, 0.3);
+
+  @include breakpoint(mobile) {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.3rem;
+    letter-spacing: -0.05rem;
+    line-height: 120%;
+  }
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "region": "Tatarstan",
+    "points": [
+      {
+        "coords": {
+          "lat": "55.799710",
+          "lng": "49.105255"
+        }
+      }
+    ]
+  },
+  {
+    "region": "Leningrad",
+    "points": [
+      {
+        "coords": {
+          "lat": "59.860695",
+          "lng": "30.305656"
+        }
+      }
+    ]
+  }
+]

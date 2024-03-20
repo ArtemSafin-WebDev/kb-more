@@ -59,9 +59,10 @@ export default function smoothScrolling() {
 
         gsap.to(window, {
           duration: 1.5,
-          ease: "power2.out",
+
           scrollTo: {
-            y: getPosition(element),
+            // y: getPosition(element),
+            y: element,
             autoKill: false,
             offsetY: pageHeader ? pageHeader.offsetHeight : 0,
           },
