@@ -1,0 +1,140 @@
+.news-single {
+  padding-top: 14rem;
+  padding-bottom: 22rem;
+
+  @include blockWrapper;
+}
+
+.news-single__content {
+  @include blockContent;
+}
+
+.news-single__heading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10rem;
+  line-height: 100%;
+  letter-spacing: -0.5rem;
+  font-family: var(--montserrat);
+  margin-bottom: 15rem;
+  max-width: 100rem;
+}
+
+.news-single__top-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 15rem;
+}
+
+.news-single__back-link {
+  grid-column: 1 / 4;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 120%;
+}
+
+.news-single__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  grid-column: 4 / 7;
+}
+
+.news-single__date {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: -0.025em;
+  font-family: var(--geologica);
+}
+
+.news-single__tag {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 120%;
+}
+
+.news-single__preview-image-container {
+  position: relative;
+  grid-column: 7 / -1;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 60%;
+  }
+}
+
+.news-single__preview-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-single__text-content {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 2rem;
+  grid-row-gap: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 140%;
+  letter-spacing: -0.08rem;
+  & > * {
+    grid-column: 7 / -1;
+  }
+
+  & > .large-text {
+    grid-column: 4 / -1;
+    margin: 12rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  & > p {
+    margin-top: 2rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    &:first-child {
+      margin-top: 0;
+    }
+    & > li {
+      position: relative;
+      padding-left: 3.6rem;
+      &::before {
+        content: "";
+        position: relative;
+        left: 1.3rem;
+        transform: translateY(-50%);
+        top: 0.2em;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: currentColor;
+      }
+    }
+  }
+}

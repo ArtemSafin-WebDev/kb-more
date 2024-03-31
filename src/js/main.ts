@@ -7,15 +7,19 @@ import project from "./project";
 import smoothScrolling from "./smoothScrolling";
 import about from "./about";
 import contactsBlock from "./contactsBlock";
+import forms from "./forms";
+import subjectsBtn from "./subjectsBtn";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
   home();
+  subjectsBtn();
   modals();
   menu();
   project();
   about();
   contactsBlock();
+  forms();
 });
 
 window.addEventListener("load", () => {

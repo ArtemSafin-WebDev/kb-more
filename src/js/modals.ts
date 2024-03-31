@@ -1,3 +1,5 @@
+import Hammer from "hammerjs";
+
 export default function modals() {
   const OPEN_BTN_SELECTOR = "a[href^='#']";
   const CLOSE_BTN_SELECTOR = ".js-modal-close";
@@ -57,5 +59,25 @@ export default function modals() {
       modals.forEach((modal) => modal.classList.remove("active"));
       document.body.classList.remove("modal-open");
     }
+  });
+
+  const closeBtns = Array.from(
+    document.querySelectorAll<HTMLButtonElement>(".js-modal-close")
+  );
+
+  closeBtns.forEach((btn) => {
+    const mc = new Hammer(btn);
+
+    console.log("MC for btn", mc, btn);
+
+    mc.get("swipe").set({ direction: Hammer.DIRECTION_VERTICAL });
+
+    mc.on("swipedown", () => {
+      if (!window.matchMedia("(max-width: 640px)").matches) return;
+      const activeModal = btn.closest(".js-modal");
+      if (!activeModal) return;
+      activeModal?.classList.remove("active");
+      document.body.classList.remove("modal-open");
+    });
   });
 }
