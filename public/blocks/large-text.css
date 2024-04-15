@@ -1,0 +1,27 @@
+.large-text {
+  font-style: italic;
+  font-weight: 400;
+  font-size: calc(3rem * var(--scale-factor, 1));
+  line-height: 140%;
+  margin: calc(3rem * var(--scale-factor, 1)) 0;
+  letter-spacing: calc(0.08rem * var(--scale-factor, 1));
+  font-family: "Montserrat", sans-serif;
+}
+
+.large-text:first-child {
+  margin-top: 0;
+}
+.large-text:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .large-text {
+    font-style: italic;
+    font-weight: 400;
+    font-size: calc(1.5rem * var(--scale-factor, 1));
+    line-height: 140%;
+    margin: calc(3rem * var(--scale-factor, 1)) 0;
+    grid-column: 1 / -1;
+  }
+}

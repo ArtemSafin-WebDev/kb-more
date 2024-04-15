@@ -1,0 +1,108 @@
+.gallery {
+  margin: calc(10rem * var(--scale-factor, 1)) 0;
+}
+
+.gallery__slider-main {
+  display: flex;
+  flex-direction: column;
+  gap: calc(1rem * var(--scale-factor, 1));
+}
+
+.gallery__slider-main .swiper {
+  margin: 0;
+  width: 100%;
+}
+
+.gallery__slider-main .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.gallery__slider-main-card {
+  position: relative;
+}
+
+.gallery__slider-main-card::before {
+  content: "";
+  padding-bottom: 51%;
+  display: block;
+}
+
+.gallery__slider-main-card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__slider-thumbs .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  box-sizing: border-box;
+  width: 107px;
+}
+
+.gallery__slider-thumbs-card {
+  padding: calc(1rem * var(--scale-factor, 1));
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+  position: relative;
+  cursor: pointer;
+}
+
+.swiper-slide-thumb-active .gallery__slider-thumbs-card {
+  border-color: white;
+  cursor: default;
+}
+
+.gallery__slider-thumbs-card-image-wrapper {
+  position: relative;
+}
+
+.gallery__slider-thumbs-card-image-wrapper::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.gallery__slider-thumbs-card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s;
+}
+
+@media (max-width: 640px) {
+  .gallery {
+    margin: calc(7rem * var(--scale-factor, 1)) 0;
+  }
+
+  .gallery__slider-thumbs {
+    display: none;
+  }
+
+  .gallery__slider-main .swiper {
+    overflow: visible;
+  }
+
+  .gallery__slider-main .swiper-slide {
+    width: calc(31rem * var(--scale-factor, 1));
+    margin-right: calc(1.5rem * var(--scale-factor, 1));
+  }
+
+  .gallery__slider-main .swiper-slide:last-child {
+    margin-right: 0;
+  }
+
+  .gallery__slider-main-card::before {
+    padding-bottom: 65%;
+  }
+}

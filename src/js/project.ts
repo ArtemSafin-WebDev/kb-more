@@ -29,7 +29,7 @@ export default function project() {
       const innerBar = context.querySelector<HTMLElement>(
         ".project__next-progress-bar-inner"
       );
-      //   const nextProjectURL = next.getAttribute("data-next-url");
+      const nextProjectURL = next.getAttribute("data-next-url");
 
       mm.add("(min-width: 641px)", () => {
         const tl = gsap.timeline({
@@ -43,7 +43,12 @@ export default function project() {
             pinSpacing: false,
             scrub: true,
           },
-          onComplete: () => {},
+          onComplete: () => {
+            if (nextProjectURL) {
+              //@ts-ignore
+              window.location = nextProjectURL;
+            }
+          },
         });
 
         tl.to(innerBar, {

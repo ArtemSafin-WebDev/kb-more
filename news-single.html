@@ -3,12 +3,17 @@
 
   <head>
     {{> meta }}
+    <link rel="stylesheet" href="/blocks/large-text.css">
+    <link rel="stylesheet" href="/blocks/image-slider.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/blocks/image-slider.js" defer=""></script>
   </head>
 
   <body>
     {{> header }}
     <main class="page-main">
-      {{> news }}
+      {{> news-single }}
       {{> contacts-block }}
     </main>
     {{> footer }}
