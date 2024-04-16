@@ -341,11 +341,29 @@
 .about__team-card {
   display: flex;
   flex-direction: column;
+
+  @media (hover: hover) {
+    &:hover {
+      .about__team-card-desc {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity 0.4s, visibility 0.4s;
+      }
+    }
+  }
+}
+
+.about__team-card-wrapper {
+  margin-bottom: 1.7rem;
+  position: relative;
+
+  @include breakpoint(mobile) {
+    display: contents;
+  }
 }
 
 .about__team-card-image-container {
   position: relative;
-  margin-bottom: 1.7rem;
 
   @include breakpoint(mobile) {
     margin-bottom: 1rem;
@@ -354,6 +372,38 @@
     content: "";
     display: block;
     padding-bottom: 135%;
+  }
+}
+
+.about__team-card-desc {
+  @include breakpointMF(small-tablet) {
+    position: absolute;
+    left: 4rem;
+    bottom: 4rem;
+    z-index: 10;
+    width: max-content;
+    max-width: 38.2rem;
+    padding: 1.6rem;
+    color: white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 140%;
+    background: rgba(14, 14, 14, 0.05);
+    backdrop-filter: blur(25px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, visibility 0s linear 0.4s;
+  }
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.3rem;
+    line-height: 120%;
+    letter-spacing: -0.025em;
+    margin-top: 0.5rem;
+    order: 10;
   }
 }
 
@@ -373,7 +423,7 @@
   line-height: 120%;
   letter-spacing: -0.025em;
   color: rgba(#fff4e0, 0.3);
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -413,6 +463,7 @@
   @include breakpoint(mobile) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: 2rem;
+    grid-row-gap: 3rem;
   }
 }
 
