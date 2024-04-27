@@ -10,6 +10,7 @@ import contactsBlock from "./contactsBlock";
 import forms from "./forms";
 import subjectsBtn from "./subjectsBtn";
 import loadMore from "./loadMore";
+import newsSingle from "./newsSingle";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   contactsBlock();
   forms();
   loadMore();
+  newsSingle();
 });
 
 window.addEventListener("load", () => {
